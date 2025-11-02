@@ -53,8 +53,7 @@ Then open catdog.ipynb and run all the cells.
 
 📊 Model Accuracy & Results
 
-Training Accuracy: XX%
+Training Accuracy: 100%
 
-Validation Accuracy: XX%
+Validation Accuracy:72 %
 
-Test Accuracy: XX%
