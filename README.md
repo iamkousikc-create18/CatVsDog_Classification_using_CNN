@@ -1,59 +1,79 @@
-🐶🐱 Cat vs Dog Classification using CNN
+🐶🐱 Dogs vs Cats Image Classification using CNN & Streamlit
 
-This project uses a Convolutional Neural Network (CNN) to classify images of cats and dogs.  
-The model is trained on image datasets and predicts whether an image contains a cat or a dog.
+📌 Project Overview
+This project implements a Convolutional Neural Network (CNN) to classify images as Dog 🐶 or Cat 🐱.
+The model is trained on 25,000 labeled images and deployed as a web application using Streamlit, allowing users to upload an image and receive real-time predictions.
+Final Validation Accuracy: ~84%
 
----
+📥 Dataset
+Dataset Source (Microsoft Official):
+https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_5340.zip�
+After extraction, folder structure should be:
 
-## 📂 Project Structure
+PetImages/
+ ├── Cat/
+ └── Dog/
+Total Images: 25,000
+Labels:
+0 → Cat
+1 → Dog
+Corrupted images were removed during preprocessing.
 
-. ├── train_dataset/       # Training images of cats and dogs ├── test_dataset/        # Testing images of cats and dogs ├── catdog.ipynb         # Jupyter Notebook with full code ├── requirements.txt     # Required Python libraries ├── README.md
+🧠 Model Architecture
+The CNN model consists of:
+Conv2D (16 filters) + MaxPooling
+Conv2D (32 filters) + MaxPooling
+Conv2D (64 filters) + MaxPooling
+Flatten Layer
+Dense Layer (512 neurons, ReLU)
+Output Layer (1 neuron, Sigmoid)
 
----
+⚙️ Training Details
+Optimizer: Adam
+Loss Function: Binary Crossentropy
+Input Shape: (128, 128, 3)
+Epochs: 10
+Data Augmentation:
+Rescaling
+Rotation
+Zoom
+Horizontal Flip
 
-## ✅ Features
+🚀 Streamlit Deployment
+The trained model (dogs_vs_cats_model.h5) is deployed using Streamlit.
+Features:
+Upload JPG / PNG / JPEG image
+Automatic resizing (128x128)
+Image normalization
+Real-time prediction
+Simple and clean UI
 
-- Image classification using CNN  
-- Data preprocessing using ImageDataGenerator  
-- Model training, validation, and testing  
-- Display of accuracy and loss graphs  
-- Ability to test custom images
+🛠️ Installation & Setup
+1️⃣ Create Environment
 
----
+conda create -n py11_env python=3.11
+conda activate py11_env
+2️⃣ Install Dependencies
 
-## ⚙ Technologies Used
+pip install tensorflow streamlit numpy pandas matplotlib scikit-learn pillow
+3️⃣ Run the Application
 
-- *Python*  
-- *TensorFlow / Keras*  
-- *NumPy, Pandas*  
-- *Matplotlib*  
-- *Jupyter Notebook / Google Colab*
+python -m streamlit run app.py
+📁 Project Structure
+Copy code
 
----
+├── app.py
+├── dogs_vs_cats_model.h5
+├── Dogs_vs_Cats_CNN.ipynb
+├── PetImages/
+├── requirements.txt
+└── README.md
 
-## 🚀 How to Run the Project
+🎯 Future Improvements
+Improve accuracy using Transfer Learning (VGG16 / ResNet)
+Add confidence score display
+Deploy on Streamlit Cloud
+Optimize model performance
 
-```bash
-# Step 1: Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-
-# Step 2: Move into the folder
-cd your-repo-name
-
-# Step 3: Install dependencies
-pip install -r requirements.txt
-
-# Step 4: Open notebook
-jupyter notebook
-
-Then open catdog.ipynb and run all the cells.
-
-
----
-
-📊 Model Accuracy & Results
-
-Training Accuracy: 100%
-
-Validation Accuracy:72 %
-
+👨‍💻 Author
+Kousik Chakraborty
