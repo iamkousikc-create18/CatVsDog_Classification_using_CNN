@@ -64,7 +64,7 @@ Copy code
 
 ├── app.py
 ├── dogs_vs_cats_model.h5
-├── Dogs_vs_Cats_CNN.ipynb
+├── Dogs vs Cats Image Classification - CNN.ipynb
 ├── PetImages/
 ├── requirements.txt
 └── README.md
